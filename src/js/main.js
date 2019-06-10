@@ -26,11 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     container.addEventListener('ps-scroll-y', () => {
       console.log(ps.reach.y)
-      if (ps.reach.y === null || ps.reach.y === 'start') {
+      if (ps.reach.y === 'start') {
         gradient.classList.add('gradient-shown')
-      } else {
+        gradient.classList.remove('top-gradient-shown')
+      } else if (ps.reach.y === null) {
+        gradient.classList.add('gradient-shown')
+        if (gradient.classList.contains('need-top-gradient')) {
+          gradient.classList.add('top-gradient-shown')
+        }
+      } else if (ps.reach.y === 'end') {
         gradient.classList.remove('gradient-shown')
+        if (gradient.classList.contains('need-top-gradient')) {
+          gradient.classList.add('top-gradient-shown')
+        }
       }
+
     });
   }
   
