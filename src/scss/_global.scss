@@ -735,6 +735,101 @@ img {
   align-items: center;
 }
 
+
+.search-panel-results {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 15px;
+  border-radius: 20px;
+  padding: 70px 80px;
+  padding-right: 30px;
+  box-shadow: 0 10px 15px rgba(#194666, 0.15);
+  z-index: 200;
+  transition: opacity .2s, visibility 0s linear .2s;
+  opacity: 0;
+  visibility: hidden;
+  &.shown {
+    opacity: 1;
+    visibility: visible;
+    transition: .2s;
+  }
+}
+
+
+.search-panel-results-heading {
+  font-size: 27px;
+  letter-spacing: .03em;
+  font-weight: 700;
+  position: relative;
+  z-index: 10;
+}
+
+
+.search-panel-results-list {
+  margin-top: -20px;
+  position: relative;
+  height: 250px;
+  padding-top: 40px;
+  .ps__rail-y {
+    margin-bottom: 0;
+    z-index: 20;
+  }
+  &-item {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.search-panel-gradient-wrapper {
+  position: relative;
+  &::before {
+    content: '';
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    height: 60px;
+    position: absolute;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, white 15px, rgba(white, 0));
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    position: absolute;
+    pointer-events: none;
+    background-image: linear-gradient(to top, white 15px, rgba(white, 0));
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  &.gradient-shown {
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+
+.search-panel-results-link {
+  font-size: 24px;
+  color: $dark-blue;
+  &:link,
+  &:visited {
+    color: $dark-blue;
+  }
+}
+
 .search-form-label {
   width: 50px;
   height: 50px;

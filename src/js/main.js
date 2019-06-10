@@ -1,7 +1,7 @@
 import objectFitImages from 'object-fit-images';
 import 'simplebar';
 import PerfectScrollbar from 'perfect-scrollbar';
-import Inputmask from "inputmask";
+import Inputmask from 'inputmask';
 
 document.addEventListener('DOMContentLoaded', function() {
   // Полифилл .contains для IE 11
@@ -53,29 +53,64 @@ document.addEventListener('DOMContentLoaded', function() {
   accordeons.forEach(accordeon => {
     const button = accordeon.querySelector('.tariffs-title');
     const content = accordeon.querySelector('.tariffs-accordeon-content');
-    
 
     // $(content).slideUp();
-    
+
     button.addEventListener('click', function(evt) {
       evt.preventDefault();
       $(content).slideToggle(400, function() {
         ps.update();
       });
-      accordeon.classList.toggle('open')
+      accordeon.classList.toggle('open');
     });
   });
 
   ps.update();
 
-
-
   // Маска ввода
 
-  const phoneNumber = document.querySelector('.review-text-input--phone')
+  const phoneNumber = document.querySelector('.review-text-input--phone');
 
   if (phoneNumber) {
-    Inputmask({"mask": "+7(999)999-99-99", clearMaskOnLostFocus: false}).mask(phoneNumber);
-    console.log('Yes')
+    Inputmask({ mask: '+7(999)999-99-99', clearMaskOnLostFocus: false }).mask(phoneNumber);
+    console.log('Yes');
+  }
+
+  // Панель поиска
+
+
+  const searchInput = document.querySelector('#q')
+  const panel = document.querySelector('.search-panel-results')
+
+  if (searchInput) {
+    searchInput.addEventListener('focus', function() {
+      panel.classList.add('shown')
+    })
+    searchInput.addEventListener('blur', function() {
+      panel.classList.remove('shown')
+    })
+  }
+
+  let searchPs;
+  const resultsList = document.querySelector('.search-panel-results-list');
+  if (resultsList) {
+    searchPs = new PerfectScrollbar(resultsList, {
+      maxScrollbarLength: 58,
+      wheelSpeed: 0.1,
+      wheelPropagation: false
+    });
+
+    const gradient = document.querySelector('.search-panel-gradient-wrapper');
+
+    resultsList.addEventListener('ps-scroll-y', () => {
+    
+      if (searchPs.reach.y === 'start') {
+        gradient.classList.add('gradient-shown');
+      } else if (searchPs.reach.y === null) {
+        gradient.classList.add('gradient-shown');
+      } else if (searchPs.reach.y === 'end') {
+        gradient.classList.remove('gradient-shown');
+      }
+    });
   }
 });
