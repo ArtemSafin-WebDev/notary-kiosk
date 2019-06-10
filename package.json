@@ -16,6 +16,7 @@
     "@babel/polyfill": "^7.2.5",
     "classlist-polyfill": "^1.2.0",
     "detect-it": "^3.0.5",
+    "inputmask": "^4.0.8",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "object-fit-images": "^3.2.4",

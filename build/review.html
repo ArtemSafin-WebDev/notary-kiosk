@@ -45,97 +45,96 @@
         </div>
       </header>
       <main>
-        <div class="container container--flex-grow container--flex-column">
+        <div class="container container container--flex-grow container--flex-column">
           <div class="main-heading-block">
             <h1 class="main-heading">
-              Информационный стенд
+              Отзыв о работе нотариуса
             </h1>
             <p class="action">
-              Выберите действие нажатием клавиши
+              Заполните, пожалуйста все поля
             </p>
           </div>
-          <ul class="services-list">
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Нотариус
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-notorius">
-                  <use xlink:href="#notorius" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Режим работы Нотариальной конторы
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-regime">
-                  <use xlink:href="#regime" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Нотариальные действия
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-notorial-actions">
-                  <use xlink:href="#notorial-actions" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Тарифы
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-tariffs">
-                  <use xlink:href="#tariffs" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Запись на приём
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-apply">
-                  <use xlink:href="#apply" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Информационные ресурсы
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-info-resource">
-                  <use xlink:href="#info-resource" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Организации осуществляющие контроль за деятельностью нотариуса
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-control">
-                  <use xlink:href="#control" />
-                </svg>
-              </a>
-            </li>
-            <li class="service-item">
-              <a href="#" class="service-card">
-                <span class="service-card-text">
-                  Оставить отзыв
-                </span>
-                <svg width="70" height="70" aria-hidden="true" class="service-card-icon icon icon-review">
-                  <use xlink:href="#review" />
-                </svg>
-              </a>
-            </li>
-          </ul>
+          <div class="notary-table-wrapper gradient-shown need-top-gradient">
+            <div class="notary-table-padding-wrapper">
+              <div class="notary-table notary-table--description">
+                <div class="review">
+                  <form action="/" method="POST" class="review-form">
+                    <div class="review-form-row">
+                      <div class="review-left-column">
+                        <div class="review-name">
+                          <label for="name" class="review-text-label">Укажите Вашу Фамилию, Имя и Отчество</label>
+                          <input type="text" class="review-text-input review-text-input--name" name="name" id="name" placeholder="ФИО" />
+                        </div>
+                      </div>
+                      <div class="review-right-column">
+                        <div class="review-phone">
+                          <label for="phone" class="review-text-label">Укажите Ваш номер телефона</label>
+                          <input type="text" class="review-text-input review-text-input--phone" name="phone" id="phone" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-form-row">
+                      <div class="review-left-column">
+                        <div class="review-get-code">
+                          <span class="review-get-code-text">
+                            Проверочный код
+                          </span>
+                          <div class="review-get-code-field">
+                            <span class="review-code">
+                              543852
+                            </span>
+                            <a href="#" class="review-code-send">
+                              <svg width="30" height="30" aria-hidden="true" class="icon icon-refresh">
+                                <use xlink:href="#refresh" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="review-code-confirmation">
+                          <label for="code" class="review-text-label">Введите проверочный код</label>
+                          <input type="text" class="review-text-input review-text-input--code" name="code" id="code" placeholder="Код" />
+                        </div>
+                      </div>
+                      <div class="review-right-column">
+                        <div class="review-score">
+                          <span class="review-score-text">
+                            Оцените работу нотариуса
+                          </span>
+                          <div class="review-score-radio-groups">
+                            <div class="review-score-radio-group">
+                              <input type="radio" id="good-score" name="score" value="good" class="review-radio-input" checked/>
+                              <label for="good-score" class="review-radio-label review-radio-label--good">
+                                <svg width="40" height="40" aria-hidden="true" class="icon icon-good">
+                                  <use xlink:href="#good" />
+                                </svg>
+                              </label>
+                            </div>
+                            <div class="review-score-radio-group">
+                              <input type="radio" id="bad-score" name="score" value="bad" class="review-radio-input"/>
+                              <label for="bad-score" class="review-radio-label review-radio-label--bad">
+                                <svg width="40" height="40" aria-hidden="true" class="icon icon-bad">
+                                  <use xlink:href="#bad" />
+                                </svg>
+                              </label>
+                            </div>  
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-form-row">
+                      <div class="review-fullwidth-column">
+                        <label for="text" class="review-text-label">Ваши предложения и замечания</label>
+                        <textarea name="text" id="text" class="review-textarea" placeholder="Текст сообщения"></textarea>
+                      </div>
+                    </div>
+                    <div class="review-form-row">
+                      <button type="submit" class="review-submit">Отправить</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <footer>
@@ -151,7 +150,21 @@
                 </span>
               </a>
             </div>
-            
+            <div class="footer-buttons-block">
+              <a href="notorius.html" class="footer-button">
+                <svg width="15" height="15" aria-hidden="true" class="footer-button-icon icon icon-arrow-left">
+                  <use xlink:href="#arrow-left" />
+                </svg>
+                <span class="footer-button-text">
+                  Назад
+                </span>
+              </a>
+              <a href="index.html" class="footer-button">
+                <span class="footer-button-text">
+                  На главную
+                </span>
+              </a>
+            </div>
             <div class="developers">
               <a href="#" class="developers-link">
                 <svg width="20" height="20" aria-hidden="true" class="developers-icon icon icon-info">
