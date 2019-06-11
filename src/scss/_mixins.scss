@@ -1,6 +1,8 @@
 @mixin container() {
-  width: $container-width;
+  width: $container-width + 40px;
   margin: 0 auto;
+  padding: 0 20px;
+  
 }
 
 @mixin visuallyHidden() {
@@ -13,6 +15,10 @@
   position: absolute;
   width: 1px;
   white-space: nowrap;
+}
+
+@mixin noHighlight() {
+  -webkit-tap-highlight-color: transparent;
 }
 
 @mixin placeholder {

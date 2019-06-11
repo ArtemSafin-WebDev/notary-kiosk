@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "Artem Safin",
   "license": "ISC",
-  "homepage": "https://github.com/ArtemSafin-WebDev/akbars",
+  "homepage": "https://github.com/ArtemSafin-WebDev/notary-kiosk",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "classlist-polyfill": "^1.2.0",
