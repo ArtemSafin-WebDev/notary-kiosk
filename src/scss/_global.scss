@@ -125,6 +125,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 22px;
+  line-height: 1;
 }
 
 .logo-region {
@@ -141,14 +142,13 @@ img {
   justify-content: center;
   @include noHighlight();
 
-
-  .no-touch &:hover, .touch &:active {
+  .no-touch &:hover,
+  .touch &:active {
     .alice-icon {
       color: white;
       fill: $primary-blue;
     }
   }
-
 }
 
 .alice-icon {
@@ -160,6 +160,7 @@ img {
 .time-block {
   width: 25%;
   text-align: right;
+  margin-top: 5px;
 }
 
 .date {
@@ -170,6 +171,7 @@ img {
 .time {
   font-size: 54px;
   line-height: 1;
+  margin-right: -4px;
 }
 
 .main-heading-block {
@@ -196,7 +198,7 @@ img {
 .services-list {
   margin: 0 -15px;
   margin-top: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
@@ -207,7 +209,7 @@ img {
     align-content: center;
     margin-top: 0;
     margin-bottom: -30px;
-    padding: 20px 0;
+    padding: 50px 0;
   }
 }
 
@@ -233,8 +235,9 @@ img {
   &:visited {
     color: $dark-blue;
   }
-  
-  .no-touch &:hover, .touch &:active {
+
+  .no-touch &:hover,
+  .touch &:active {
     box-shadow: 0 0 0 rgba(#194666, 0.15);
   }
 }
@@ -266,9 +269,13 @@ img {
   display: flex;
   align-items: center;
   @include noHighlight();
-  .no-touch &:hover, .touch &:active {
+  .no-touch &:hover,
+  .touch &:active {
     .technical-support-icon {
       fill: $primary-blue;
+    }
+    .technical-support-text {
+      color: $medium-grey;
     }
   }
 }
@@ -282,6 +289,7 @@ img {
 .technical-support-text {
   color: $lighter-grey;
   font-size: 20px;
+  transition: color 0.2s;
 }
 
 .developers {
@@ -294,9 +302,13 @@ img {
 .developers-link {
   display: flex;
   align-items: center;
-  .no-touch &:hover, .touch &:active {
+  .no-touch &:hover,
+  .touch &:active {
     .developers-icon {
       fill: $primary-blue;
+    }
+    .developers-text {
+      color: $medium-grey;
     }
   }
 }
@@ -304,6 +316,7 @@ img {
 .developers-text {
   font-size: 20px;
   color: $lighter-grey;
+  transition: color 0.2s;
 }
 
 .developers-icon {
@@ -334,8 +347,9 @@ img {
   &:visited {
     color: white;
   }
-  
-  .no-touch &:hover, .touch &:active {
+
+  .no-touch &:hover,
+  .touch &:active {
     background-color: $deep-blue;
   }
 }
@@ -428,6 +442,14 @@ img {
   &--description {
     padding-left: 170px;
     padding-right: 170px;
+  }
+  &--with-spacer {
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 75px;
+    }
   }
   > table {
     width: 100%;
@@ -697,8 +719,9 @@ img {
   &:visited {
     color: $dark-blue;
   }
- 
-  .no-touch &:hover, .touch &:active {
+
+  .no-touch &:hover,
+  .touch &:active {
     box-shadow: 0 0 0 rgba(#194666, 0.15);
   }
 }
@@ -835,6 +858,12 @@ img {
   align-self: stretch;
   @include placeholder {
     color: $lighter-grey;
+    transition: opacity 0.2s;
+  }
+  &:focus {
+    @include placeholder {
+      opacity: 0;
+    }
   }
 }
 
@@ -874,6 +903,7 @@ img {
 .notary-alphabet {
   margin-top: 60px;
   width: 100%;
+  margin-bottom: 45px;
 }
 
 .letter-block {
@@ -924,7 +954,8 @@ img {
   box-shadow: 0 10px 15px rgba(#194666, 0.15);
   transition: all 0.2s;
   @include noHighlight();
-  .no-touch &:hover, .touch &:active {
+  .no-touch &:hover,
+  .touch &:active {
     box-shadow: 0 0 0 rgba(#194666, 0.15);
   }
 }
@@ -980,8 +1011,9 @@ img {
   &:visited {
     color: $dark-blue;
   }
-  
-  .no-touch &:hover, .touch &:active {
+
+  .no-touch &:hover,
+  .touch &:active {
     box-shadow: 0 0 0 rgba(#194666, 0.15);
   }
   .icon {
@@ -995,18 +1027,28 @@ img {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+
+  width: 1590px;
+  margin: 0 auto;
+  margin-top: 60px;
   iframe {
     width: 100%;
-    height: 100%;
+    height: auto;
     flex-grow: 1;
   }
+}
+
+.control-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 }
 
 .control {
   margin: auto;
   width: 39.2%;
-  padding: 20px 0;
+  margin-bottom: 75px;
 }
 
 .control-item {
@@ -1033,8 +1075,9 @@ img {
   &:visited {
     color: $dark-blue;
   }
-  
-  .no-touch &:hover, .touch &:active {
+
+  .no-touch &:hover,
+  .touch &:active {
     box-shadow: 0 0 0 rgba(#194666, 0.15);
   }
 }
@@ -1053,7 +1096,7 @@ img {
 
 .actions {
   margin: 0 -15px;
-  margin-bottom: -30px;
+  margin-bottom: 45px;
   display: flex;
   flex-wrap: wrap;
   counter-reset: actions-counter;
@@ -1090,8 +1133,9 @@ img {
   &:visited {
     color: $dark-blue;
   }
-  
-  .no-touch &:hover, .touch &:active {
+
+  .no-touch &:hover,
+  .touch &:active {
     box-shadow: 0 0 0 rgba(#194666, 0.15);
   }
 }
@@ -1115,6 +1159,10 @@ img {
     line-height: 1.5;
     margin-bottom: 30px;
   }
+}
+
+.tariffs {
+  margin-bottom: 75px;
 }
 
 .tariffs-accordeon {
@@ -1155,6 +1203,7 @@ img {
       margin-top: -1.5px;
       height: 3px;
       width: 100%;
+      transform: rotate(180deg);
     }
     &:nth-child(2) {
       position: absolute;
@@ -1166,6 +1215,7 @@ img {
       margin-top: -1.5px;
       height: 3px;
       width: 100%;
+      transform: rotate(270deg);
     }
   }
 }
@@ -1210,10 +1260,10 @@ img {
 .tariffs-accordeon.open .tariffs-cross {
   > span {
     &:nth-child(1) {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
     &:nth-child(2) {
-      transform: rotate(270deg);
+      transform: rotate(0deg);
     }
   }
 }
@@ -1282,6 +1332,12 @@ img {
   }
   @include placeholder {
     color: $lighter-grey;
+    transition: opacity 0.2s;
+  }
+  &:focus {
+    @include placeholder {
+      opacity: 0;
+    }
   }
 }
 
@@ -1318,6 +1374,23 @@ img {
   .icon {
     fill: white;
     display: block;
+  }
+  &.rotating {
+    .icon {
+      animation-name: rotation;
+      animation-iteration-count: infinite;
+      animation-duration: 0.8s;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -1397,6 +1470,12 @@ img {
   outline: none;
   @include placeholder {
     color: $lighter-grey;
+    transition: opacity 0.2s;
+  }
+  &:focus {
+    @include placeholder {
+      opacity: 0;
+    }
   }
 }
 
@@ -1409,9 +1488,10 @@ img {
   padding: 22px 60px;
   outline: none;
   transition: 0.2s;
- 
+
   @include noHighlight();
-  .no-touch &:hover, .touch &:active {
+  .no-touch &:hover,
+  .touch &:active {
     background-color: $deep-blue;
   }
 }
