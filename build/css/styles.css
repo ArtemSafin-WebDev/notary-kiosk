@@ -316,7 +316,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #F1F3F5;
-  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.4;
@@ -399,7 +398,8 @@ img {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  overflow-x: hidden; }
 
 .visually-hidden {
   border: 0;
@@ -922,13 +922,16 @@ img {
     position: absolute;
     left: 67%;
     bottom: 0;
-    height: calc(100vh - 130px);
-    right: calc(-1 * (100vw - 100%) / 2);
+    height: 100vh;
+    right: calc(-20px + -1 * ((100vw - 100%) / 2));
     z-index: -1;
     background-image: url("../img/nav-right.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; }
+    @media screen and (max-width: 1810px) {
+      .fullheight-layout::before {
+        right: -20px; } }
 
 .fullheight-layout-left {
   min-height: 100px;
